@@ -1,6 +1,6 @@
 package org.commonmark.internal.util
 
-import commonmark_kotlin.commonmark.generated.resources.Res
+import io.github.mrl.commonmark.generated.resources.Res
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.runBlocking

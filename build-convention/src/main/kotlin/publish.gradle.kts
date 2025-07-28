@@ -3,14 +3,17 @@ plugins {
     signing
 }
 
+group = "io.github.mrl"
+version = "0.25.0"
+
 publishing {
     repositories {
 
     }
     publications {
         getByName<MavenPublication>("kotlinMultiplatform") {
-            groupId = "io.github.mrl"
-            version = "0.25.0"
+            groupId = project.group.toString()
+            version = project.version.toString()
 
             pom {
                 name.set("Commonmark-Kotlin")

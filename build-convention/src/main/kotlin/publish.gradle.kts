@@ -8,7 +8,14 @@ version = "0.25.0"
 
 publishing {
     repositories {
-
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/darriousliu/commonmark-kotlin")
+            credentials {
+                username = System.getenv("GITHUB_PUBLISH_USERNAME")
+                password = System.getenv("GITHUB_PUBLISH_TOKEN")
+            }
+        }
     }
     publications {
         getByName<MavenPublication>("kotlinMultiplatform") {
@@ -18,7 +25,7 @@ publishing {
             pom {
                 name.set("Commonmark-Kotlin")
                 description.set("A multiplatform library for parsing CommonMark Markdown syntax in Kotlin")
-                url.set("https://github.com/master-lzh/commonmark-kotlin")
+                url.set("https://github.com/darriousliu/commonmark-kotlin")
 
                 licenses {
                     license {
@@ -27,9 +34,9 @@ publishing {
                     }
                 }
                 scm {
-                    url.set("https://github.com/master-lzh/commonmark-kotlin")
-                    connection.set("scm:git:git://github.com/master-lzh/commonmark-kotlin.git")
-                    developerConnection.set("scm:git:git://github.com/master-lzh/commonmark-kotlin.git")
+                    url.set("https://github.com/darriousliu/commonmark-kotlin")
+                    connection.set("scm:git:git://github.com/darriousliu/commonmark-kotlin.git")
+                    developerConnection.set("scm:git:git://github.com/darriousliu/commonmark-kotlin.git")
                 }
             }
         }

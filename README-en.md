@@ -43,13 +43,14 @@ Add the following to your `settings.gradle.kts`:
 ```kotlin
 pluginManagement {
     repositories {
-        mavenCentral()
-        maven { url = uri("https://jitpack.io") }
+        mavenCentral() // or maven { url = uri("https://jitpack.io") }
     }
 }
 ```
 
 Then, add the dependency in your `build.gradle.kts`:
+
+### Android:
 
 ```kotlin
 dependencies {
@@ -62,9 +63,7 @@ dependencies {
 }
 ```
 
-### Multiplatform Setup
-
-For Kotlin Multiplatform projects:
+### Kotlin Multiplatform:
 
 ```kotlin 
 kotlin {

@@ -40,12 +40,16 @@
 将以下内容添加到 `settings.gradle.kts`：
 
 ```kotlin
-repositories {
-    maven { url = uri("https://jitpack.io") }
+pluginManagement {
+    repositories {
+        mavenCentral() // 或者 maven { url = uri("https://jitpack.io") }
+    }
 }
 ```
 
 然后，在你的 `build.gradle.kts` 中添加依赖：
+
+### Android
 
 ```kotlin
 dependencies {
@@ -58,9 +62,7 @@ dependencies {
 }
 ```
 
-### 多平台配置
-
-Kotlin 多平台项目配置示例：
+### Kotlin 多平台：
 
 ```kotlin 
 kotlin {

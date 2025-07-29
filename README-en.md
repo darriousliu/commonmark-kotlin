@@ -38,20 +38,27 @@ This library includes several useful extensions:
 
 ### Gradle (Kotlin DSL)
 
-Add the following to your `build.gradle.kts`:
+Add the following to your `settings.gradle.kts`:
 
 ```kotlin
-repositories {
-    maven { url = uri("https://jitpack.io") }
+pluginManagement {
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
 }
+```
 
+Then, add the dependency in your `build.gradle.kts`:
+
+```kotlin
 dependencies {
-    implementation("io.github.mrl:commonmark:0.25.0")
+    implementation("io.github.darriousliu:commonmark:0.25.0")
     // Extensions (optional)
-    implementation("io.github.mrl:commonmark-ext-autolink:0.25.0")
-    implementation("io.github.mrl:commonmark-ext-gfm-tables:0.25.0")
-    implementation("io.github.mrl:commonmark-ext-gfm-strikethrough:0.25.0")
-    implementation("io.github.mrl:commonmark-ext-latex:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-latex:0.25.0")
 }
 ```
 
@@ -63,7 +70,7 @@ For Kotlin Multiplatform projects:
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.mrl:commonmark:0.25.0")
+            implementation("io.github.darriousliu:commonmark:0.25.0")
         }
     }
 }

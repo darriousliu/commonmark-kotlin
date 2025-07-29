@@ -2,7 +2,6 @@
 
 [English Version](README-en.md) | [中文版本](README.md)
 
-
 [![许可证](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 [![Kotlin](https://img.shields.io/badge/kotlin-multiplatform-blue.svg?logo=kotlin)]([http://kotlinlang.org](https://www.jetbrains.com/kotlin-multiplatform/))
 
@@ -38,20 +37,24 @@
 
 ### Gradle (Kotlin DSL)
 
-将以下内容添加到 `build.gradle.kts`：
+将以下内容添加到 `settings.gradle.kts`：
 
 ```kotlin
 repositories {
     maven { url = uri("https://jitpack.io") }
 }
+```
 
+然后，在你的 `build.gradle.kts` 中添加依赖：
+
+```kotlin
 dependencies {
-    implementation("io.github.mrl:commonmark:0.25.0")
+    implementation("io.github.darriousliu:commonmark:0.25.0")
     // 可选扩展
-    implementation("io.github.mrl:commonmark-ext-autolink:0.25.0")
-    implementation("io.github.mrl:commonmark-ext-gfm-tables:0.25.0")
-    implementation("io.github.mrl:commonmark-ext-gfm-strikethrough:0.25.0")
-    implementation("io.github.mrl:commonmark-ext-latex:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-latex:0.25.0")
 }
 ```
 
@@ -63,7 +66,7 @@ Kotlin 多平台项目配置示例：
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.mrl:commonmark:0.25.0")
+            implementation("io.github.darriousliu:commonmark:0.25.0")
         }
     }
 }

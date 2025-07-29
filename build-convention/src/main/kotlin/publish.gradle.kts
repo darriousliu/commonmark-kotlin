@@ -3,7 +3,7 @@ plugins {
     signing
 }
 
-group = "io.github.mrl"
+group = "io.github.darriousliu"
 version = "0.25.0"
 
 publishing {

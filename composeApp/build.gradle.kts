@@ -13,7 +13,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -24,7 +24,7 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
@@ -32,6 +32,10 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(project(":commonmark"))
+            implementation(project(":commonmark-ext-autolink"))
+            implementation(project(":commonmark-ext-gfm-strikethrough"))
+            implementation(project(":commonmark-ext-gfm-tables"))
+            implementation(project(":commonmark-ext-latex"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
@@ -71,10 +75,13 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+
+        isCoreLibraryDesugaringEnabled = true
     }
 }
 
 dependencies {
+    coreLibraryDesugaring(libs.desugar)
     debugImplementation(compose.uiTooling)
 }
 

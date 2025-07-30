@@ -34,10 +34,6 @@ kotlin {
     }
 }
 
-publishing {
-    publications {
-        getByName<MavenPublication>("kotlinMultiplatform") {
-            artifactId = "commonmark-ext-gfm-tables"
-        }
-    }
+mavenPublishing {
+    coordinates(group.toString(), "commonmark-ext-gfm-tables", version.toString())
 }

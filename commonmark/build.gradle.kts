@@ -38,12 +38,8 @@ kotlin {
     }
 }
 
-publishing {
-    publications {
-        getByName<MavenPublication>("kotlinMultiplatform") {
-            artifactId = "commonmark"
-        }
-    }
+mavenPublishing {
+    coordinates(group.toString(), "commonmark", version.toString())
 }
 
 dependencies {

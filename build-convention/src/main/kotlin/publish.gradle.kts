@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "io.github.darriousliu"
-version = "0.25.0"
+version = findProperty("version")?.toString().orEmpty()
 
 val commonPom = Action<MavenPom> {
     name.set("Commonmark-Kotlin")

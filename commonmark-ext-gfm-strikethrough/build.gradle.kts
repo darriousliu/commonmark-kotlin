@@ -35,10 +35,6 @@ kotlin {
     }
 }
 
-publishing {
-    publications {
-        getByName<MavenPublication>("kotlinMultiplatform") {
-            artifactId = "commonmark-ext-gfm-strikethrough"
-        }
-    }
+mavenPublishing {
+    coordinates(group.toString(), "commonmark-ext-gfm-strikethrough", version.toString())
 }

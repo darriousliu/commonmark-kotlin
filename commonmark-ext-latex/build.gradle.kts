@@ -33,10 +33,6 @@ kotlin {
     }
 }
 
-publishing {
-    publications {
-        getByName<MavenPublication>("kotlinMultiplatform") {
-            artifactId = "commonmark-ext-latex"
-        }
-    }
+mavenPublishing {
+    coordinates(group.toString(), "commonmark-ext-latex", version.toString())
 }

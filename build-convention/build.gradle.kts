@@ -9,6 +9,7 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.maven.gradlePlugin)
     implementation(libs.android.gradlePlugin)
     implementation(libs.kotlin.gradlePlugin)
 }

@@ -38,7 +38,7 @@ publishing {
         }
     }
     publications {
-        getByName<MavenPublication>("kotlinMultiplatform") {
+        publications.withType<MavenPublication> {
             groupId = project.group.toString()
             version = project.version.toString()
 

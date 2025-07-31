@@ -11,10 +11,10 @@ package org.commonmark.node
 class Emphasis : Node, Delimited {
     private var delimiter: String
 
-    override val openingDelimiter: String?
+    override val openingDelimiter: String
         get() = delimiter
 
-    override val closingDelimiter: String?
+    override val closingDelimiter: String
         get() = delimiter
 
     constructor(delimiter: String) {

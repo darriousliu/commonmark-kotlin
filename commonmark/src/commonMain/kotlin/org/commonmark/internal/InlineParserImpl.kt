@@ -97,7 +97,7 @@ class InlineParserImpl(
         for (factory in inlineContentParserFactories) {
             val parser = factory.create()
             for (c in factory.triggerCharacters) {
-                map.computeIfAbsent2(c) { k -> ArrayList() }?.add(parser)
+                map.computeIfAbsent2(c) { k -> ArrayList() }.add(parser)
             }
         }
         return map

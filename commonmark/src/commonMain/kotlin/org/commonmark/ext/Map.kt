@@ -8,4 +8,4 @@ fun <K, V> MutableMap<K, V>.putIfAbsent(key: K, value: V): V? {
     return v
 }
 
-expect fun <K, V> MutableMap<K, V>.computeIfAbsent2(key: K, mappingFunction: (K) -> V): V?
+expect fun <K, V> MutableMap<K, V>.computeIfAbsent2(key: K, mappingFunction: (K) -> V): V

@@ -24,5 +24,5 @@ interface AttributeProvider {
      * @param tagName the HTML tag name that these attributes are for (e.g. `h1`, `pre`, `code`).
      * @param attributes the attributes, with any default attributes already set in the map
      */
-    fun setAttributes(node: Node, tagName: String, attributes: Map<String, String?>)
+    fun setAttributes(node: Node, tagName: String, attributes: MutableMap<String, String?>)
 }

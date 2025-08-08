@@ -38,5 +38,6 @@ include(":commonmark-ext-autolink")
 include(":commonmark-ext-footnotes")
 include(":commonmark-ext-gfm-strikethrough")
 include(":commonmark-ext-gfm-tables")
+include(":commonmark-ext-heading-anchor")
 include(":commonmark-ext-latex")
 

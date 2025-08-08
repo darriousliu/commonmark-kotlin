@@ -41,5 +41,6 @@ include(":commonmark-ext-gfm-tables")
 include(":commonmark-ext-heading-anchor")
 include(":commonmark-ext-image-attributes")
 include(":commonmark-ext-ins")
+include(":commonmark-ext-task-list-items")
 include(":commonmark-ext-latex")
 

@@ -29,9 +29,15 @@
 该库包含多个实用扩展：
 
 - **commonmark-ext-autolink** - 自动链接识别
-- **commonmark-ext-gfm-tables** - GitHub 风格 Markdown 表格
+- **commonmark-ext-footnotes** - 脚注支持
 - **commonmark-ext-gfm-strikethrough** - GitHub 风格 Markdown 删除线
+- **commonmark-ext-gfm-tables** - GitHub 风格 Markdown 表格
+- **commonmark-ext-heading-anchor** - 标题锚点
+- **commonmark-ext-image-attributes** - 图片属性
+- **commonmark-ext-ins** - 插入文本支持
 - **commonmark-ext-latex** - LaTeX 数学公式
+- **commonmark-ext-task-list-items** - 任务列表项
+- **commonmark-ext-yaml-front-matter** - YAML 前置数据
 
 ## 安装
 
@@ -53,12 +59,17 @@ pluginManagement {
 
 ```kotlin
 dependencies {
-    implementation("io.github.darriousliu:commonmark:0.25.0")
+    implementation("io.github.darriousliu:commonmark:0.25.1")
     // 可选扩展
-    implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.0")
-    implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.0")
-    implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.0")
-    implementation("io.github.darriousliu:commonmark-ext-latex:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-footnotes:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-heading-anchor:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-image-attributes:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-ins:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-task-list-items:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-latex:0.25.1")
 }
 ```
 
@@ -68,7 +79,17 @@ dependencies {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.darriousliu:commonmark:0.25.0")
+            implementation("io.github.darriousliu:commonmark:0.25.1")
+            // 可选扩展
+            implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-footnotes:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-heading-anchor:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-image-attributes:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-ins:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-task-list-items:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-latex:0.25.1")
         }
     }
 }

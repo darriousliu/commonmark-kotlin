@@ -30,9 +30,15 @@ and rendering functions for CommonMark Markdown syntax.
 This library includes several useful extensions:
 
 - **commonmark-ext-autolink** - Automatic link detection
-- **commonmark-ext-gfm-tables** - GitHub Flavored Markdown tables
+- **commonmark-ext-footnotes** - Footnotes support
 - **commonmark-ext-gfm-strikethrough** - GitHub Flavored Markdown strikethrough
+- **commonmark-ext-gfm-tables** - GitHub Flavored Markdown tables
+- **commonmark-ext-heading-anchor** - Title anchor point
+- **commonmark-ext-image-attributes** - Image attributes
+- **commonmark-ext-ins** - Insert text support
 - **commonmark-ext-latex** - LaTeX math expressions
+- **commonmark-ext-task-list-items** - Task List Items
+- **commonmark-ext-yaml-front-matter** - YAML pre-data
 
 ## Installation
 
@@ -54,12 +60,17 @@ Then, add the dependency in your `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("io.github.darriousliu:commonmark:0.25.0")
+    implementation("io.github.darriousliu:commonmark:0.25.1")
     // Extensions (optional)
-    implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.0")
-    implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.0")
-    implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.0")
-    implementation("io.github.darriousliu:commonmark-ext-latex:0.25.0")
+    implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-footnotes:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-heading-anchor:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-image-attributes:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-ins:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-task-list-items:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-latex:0.25.1")
 }
 ```
 
@@ -69,7 +80,17 @@ dependencies {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.darriousliu:commonmark:0.25.0")
+            implementation("io.github.darriousliu:commonmark:0.25.1")
+            // Extensions (optional)
+            implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-footnotes:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-heading-anchor:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-image-attributes:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-ins:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-task-list-items:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-latex:0.25.1")
         }
     }
 }

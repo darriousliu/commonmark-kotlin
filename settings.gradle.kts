@@ -39,5 +39,6 @@ include(":commonmark-ext-footnotes")
 include(":commonmark-ext-gfm-strikethrough")
 include(":commonmark-ext-gfm-tables")
 include(":commonmark-ext-heading-anchor")
+include(":commonmark-ext-image-attributes")
 include(":commonmark-ext-latex")
 

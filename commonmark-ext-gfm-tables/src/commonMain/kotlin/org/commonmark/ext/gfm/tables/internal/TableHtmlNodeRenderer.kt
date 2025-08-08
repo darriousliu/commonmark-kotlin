@@ -54,7 +54,7 @@ class TableHtmlNodeRenderer(private val context: HtmlNodeRendererContext) : Tabl
     }
 
     private fun getAttributes(node: Node, tagName: String): Map<String, String?> {
-        return context.extendAttributes(node, tagName, mapOf())
+        return context.extendAttributes(node, tagName, mutableMapOf())
     }
 
     private fun getCellAttributes(tableCell: TableCell, tagName: String): Map<String, String?> {
@@ -62,10 +62,10 @@ class TableHtmlNodeRenderer(private val context: HtmlNodeRendererContext) : Tabl
             context.extendAttributes(
                 tableCell,
                 tagName,
-                mapOf("align" to getAlignValue(tableCell.alignment))
+                mutableMapOf("align" to getAlignValue(tableCell.alignment))
             )
         } else {
-            context.extendAttributes(tableCell, tagName, mapOf())
+            context.extendAttributes(tableCell, tagName, mutableMapOf())
         }
     }
 

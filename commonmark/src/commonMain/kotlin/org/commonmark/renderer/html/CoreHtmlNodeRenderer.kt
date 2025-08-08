@@ -139,7 +139,7 @@ open class CoreHtmlNodeRenderer(protected val context: HtmlNodeRendererContext) 
     }
 
     override fun visit(indentedCodeBlock: IndentedCodeBlock) {
-        renderCodeBlock(indentedCodeBlock.literal, indentedCodeBlock, mapOf())
+        renderCodeBlock(indentedCodeBlock.literal, indentedCodeBlock, mutableMapOf())
     }
 
     override fun visit(link: Link) {
@@ -246,7 +246,11 @@ open class CoreHtmlNodeRenderer(protected val context: HtmlNodeRendererContext) 
         }
     }
 
-    private fun renderCodeBlock(literal: String, node: Node, attributes: Map<String, String?>) {
+    private fun renderCodeBlock(
+        literal: String,
+        node: Node,
+        attributes: MutableMap<String, String?>
+    ) {
         html.line()
         html.tag("pre", getAttrs(node, "pre"))
         html.tag("code", getAttrs(node, "code", attributes))
@@ -283,13 +287,13 @@ open class CoreHtmlNodeRenderer(protected val context: HtmlNodeRendererContext) 
     }
 
     private fun getAttrs(node: Node, tagName: String): Map<String, String?> {
-        return getAttrs(node, tagName, mapOf())
+        return getAttrs(node, tagName, mutableMapOf())
     }
 
     private fun getAttrs(
         node: Node,
         tagName: String,
-        defaultAttributes: Map<String, String?>
+        defaultAttributes: MutableMap<String, String?>
     ): Map<String, String?> {
         return context.extendAttributes(node, tagName, defaultAttributes)
     }

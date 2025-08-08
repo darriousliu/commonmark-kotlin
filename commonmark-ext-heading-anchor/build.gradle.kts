@@ -35,6 +35,10 @@ kotlin {
     }
 }
 
+dependencies {
+    coreLibraryDesugaring(libs.desugar)
+}
+
 mavenPublishing {
     coordinates(group.toString(), "commonmark-ext-heading-anchor", version.toString())
 }

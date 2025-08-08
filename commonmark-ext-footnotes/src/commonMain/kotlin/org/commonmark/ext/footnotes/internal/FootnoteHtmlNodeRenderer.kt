@@ -196,7 +196,10 @@ class FootnoteHtmlNodeRenderer(private val context: HtmlNodeRendererContext) : N
     }
 
     private fun renderReference(node: Node, referenceInfo: ReferenceInfo) {
-        html.tag("sup", context.extendAttributes(node, "sup", mapOf("class" to "footnote-ref")))
+        html.tag(
+            "sup",
+            context.extendAttributes(node, "sup", mutableMapOf("class" to "footnote-ref"))
+        )
 
         val href = "#" + referenceInfo.definitionId
         val attrs = LinkedHashMap<String, String?>()
@@ -223,7 +226,7 @@ class FootnoteHtmlNodeRenderer(private val context: HtmlNodeRendererContext) : N
                 if (node is Paragraph) {
                     // Because we're manually rendering the <p> for the last paragraph, do the same for all other
                     // paragraphs for consistency (Paragraph rendering might be overwritten by a custom renderer).
-                    html.tag("p", context.extendAttributes(node, "p", mapOf()))
+                    html.tag("p", context.extendAttributes(node, "p", mutableMapOf()))
                     renderChildren(node)
                     html.tag("/p")
                     html.line()
@@ -233,14 +236,14 @@ class FootnoteHtmlNodeRenderer(private val context: HtmlNodeRendererContext) : N
                 node = node.next
             }
 
-            html.tag("p", context.extendAttributes(lastParagraph, "p", mapOf()))
+            html.tag("p", context.extendAttributes(lastParagraph, "p", mutableMapOf()))
             renderChildren(lastParagraph)
             html.raw(" ")
             renderBackrefs(def, referencedDefinition)
             html.tag("/p")
             html.line()
         } else if (def is InlineFootnote) {
-            html.tag("p", context.extendAttributes(def, "p", mapOf()))
+            html.tag("p", context.extendAttributes(def, "p", mutableMapOf()))
             renderChildren(def)
             html.raw(" ")
             renderBackrefs(def, referencedDefinition)
@@ -274,7 +277,7 @@ class FootnoteHtmlNodeRenderer(private val context: HtmlNodeRendererContext) : N
             if (refNumber > 1) {
                 html.tag(
                     "sup",
-                    context.extendAttributes(def, "sup", mapOf("class" to "footnote-ref"))
+                    context.extendAttributes(def, "sup", mutableMapOf("class" to "footnote-ref"))
                 )
                 html.raw(refNumber.toString())
                 html.tag("/sup")

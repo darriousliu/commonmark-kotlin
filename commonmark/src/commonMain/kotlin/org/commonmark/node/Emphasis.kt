@@ -9,15 +9,15 @@ package org.commonmark.node
  * @see [CommonMark Spec: Emphasis and strong emphasis](https://spec.commonmark.org/0.31.2/.emphasis-and-strong-emphasis)
  */
 class Emphasis : Node, Delimited {
-    private var delimiter: String
+    private var delimiter: String?
 
-    override val openingDelimiter: String
+    override val openingDelimiter: String?
         get() = delimiter
 
-    override val closingDelimiter: String
+    override val closingDelimiter: String?
         get() = delimiter
 
-    constructor(delimiter: String) {
+    constructor(delimiter: String?) {
         this.delimiter = delimiter
     }
 

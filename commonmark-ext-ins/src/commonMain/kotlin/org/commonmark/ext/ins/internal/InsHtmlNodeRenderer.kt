@@ -8,7 +8,7 @@ class InsHtmlNodeRenderer(private val context: HtmlNodeRendererContext) : InsNod
     private val html: HtmlWriter = context.writer
 
     override fun render(node: Node) {
-        val attributes: Map<String, String?> = context.extendAttributes(node, "ins", mapOf())
+        val attributes: Map<String, String?> = context.extendAttributes(node, "ins", mutableMapOf())
         html.tag("ins", attributes)
         renderChildren(node)
         html.tag("/ins")

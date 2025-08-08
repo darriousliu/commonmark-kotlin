@@ -9,7 +9,7 @@ class StrikethroughHtmlNodeRenderer(private val context: HtmlNodeRendererContext
     private val html: HtmlWriter = context.writer
 
     override fun render(node: Node) {
-        val attributes = context.extendAttributes(node, "del", mapOf())
+        val attributes = context.extendAttributes(node, "del", mutableMapOf())
         html.tag("del", attributes)
         renderChildren(node)
         html.tag("/del")

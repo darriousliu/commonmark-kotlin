@@ -255,9 +255,9 @@ class HtmlRenderer private constructor(builder: Builder) : Renderer {
         override fun extendAttributes(
             node: Node,
             tagName: String,
-            attributes: Map<String, String?>
+            attributes: MutableMap<String, String?>
         ): Map<String, String?> {
-            val attrs: Map<String, String?> = LinkedHashMap(attributes)
+            val attrs = LinkedHashMap(attributes)
             setCustomAttributes(node, tagName, attrs)
             return attrs
         }
@@ -280,7 +280,7 @@ class HtmlRenderer private constructor(builder: Builder) : Renderer {
             nodeRendererMap.afterRoot(node)
         }
 
-        fun setCustomAttributes(node: Node, tagName: String, attrs: Map<String, String?>) {
+        fun setCustomAttributes(node: Node, tagName: String, attrs: MutableMap<String, String?>) {
             for (attributeProvider in attributeProviders) {
                 attributeProvider.setAttributes(node, tagName, attrs)
             }

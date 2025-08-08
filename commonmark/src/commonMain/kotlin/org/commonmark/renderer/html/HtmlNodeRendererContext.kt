@@ -20,7 +20,7 @@ interface HtmlNodeRendererContext {
     fun extendAttributes(
         node: Node,
         tagName: String,
-        attributes: Map<String, String?>
+        attributes: MutableMap<String, String?>
     ): Map<String, String?>
 
     /**

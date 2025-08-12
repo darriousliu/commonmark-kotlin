@@ -28,7 +28,11 @@ class FootnoteBlockParser(label: String) : AbstractBlockParser() {
         if (parserState.indent >= 4) {
             // It looks like content needs to be indented by 4 so that it's part of a footnote (instead of starting a new block).
             return BlockContinue.atColumn(4)
-        } else {
+        } else if (parserState.isBlank) {
+            // A blank line doesn't finish a footnote yet. If there's another line with indent >= 4 after it,
+            // that should result in another paragraph in this footnote definition.
+            return BlockContinue.atIndex(parserState.index)
+        }else {
             // We're not continuing to give other block parsers a chance to interrupt this definition.
             // But if no other block parser applied (including another FootnotesBlockParser), we will
             // accept the line via lazy continuation (same as a block quote).

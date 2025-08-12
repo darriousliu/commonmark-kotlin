@@ -54,9 +54,7 @@ class FootnoteMarkdownNodeRenderer(private val context: MarkdownNodeRendererCont
         writer.raw("]: ")
 
         writer.pushPrefix("    ")
-        writer.pushTight(true)
         renderChildren(def)
-        writer.popTight()
         writer.popPrefix()
     }
 

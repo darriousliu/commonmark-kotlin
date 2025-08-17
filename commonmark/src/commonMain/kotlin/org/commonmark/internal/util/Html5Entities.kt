@@ -1,14 +1,10 @@
 package org.commonmark.internal.util
 
-import io.github.darriousliu.commonmark.generated.resources.Res
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
-import kotlinx.coroutines.runBlocking
 import org.commonmark.ext.toChars
+import org.commonmark.resource.ENTITIES
 
 object Html5Entities {
     private val NAMED_CHARACTER_REFERENCES: Map<String, String> = readEntities()
-    private const val ENTITY_PATH = "files/org/commonmark/internal/util/entities.txt"
 
     fun entityToString(input: String): String {
         if (!input.startsWith("&") || !input.endsWith(";")) {
@@ -41,8 +37,7 @@ object Html5Entities {
 
     private fun readEntities(): Map<String, String> {
         val entities = hashMapOf<String, String>()
-        val lines =
-            runBlocking(Dispatchers.IO) { Res.readBytes(ENTITY_PATH).decodeToString().lines() }
+        val lines = ENTITIES.lines()
         lines.forEach { line ->
             if (line.isEmpty()) return@forEach
             val equal = line.indexOf("=")

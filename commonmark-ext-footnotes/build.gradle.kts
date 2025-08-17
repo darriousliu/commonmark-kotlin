@@ -1,8 +1,6 @@
 plugins {
     id("multiplatform")
     id("publish")
-    alias(libs.plugins.composeMultiplatform)
-    alias(libs.plugins.composeCompiler)
 }
 
 kotlin {
@@ -15,9 +13,6 @@ kotlin {
             dependencies {
                 implementation(project(":commonmark"))
                 implementation(libs.kotlin.stdlib)
-
-                implementation(compose.runtime)
-                implementation(compose.components.resources)
             }
         }
 

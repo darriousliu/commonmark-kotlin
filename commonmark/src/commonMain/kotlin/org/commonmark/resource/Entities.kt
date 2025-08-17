@@ -1,3 +1,7 @@
+package org.commonmark.resource
+
+internal val ENTITIES by lazy {
+    """
 Aacute=Á
 aacute=á
 Abreve=Ă
@@ -386,7 +390,7 @@ DJcy=Ђ
 djcy=ђ
 dlcorn=⌞
 dlcrop=⌍
-dollar=$
+dollar=${'$'}
 Dopf=𝔻
 dopf=𝕕
 Dot=¨
@@ -2124,3 +2128,6 @@ Zscr=𝒵
 zscr=𝓏
 zwj=‍
 zwnj=‌
+
+"""
+}

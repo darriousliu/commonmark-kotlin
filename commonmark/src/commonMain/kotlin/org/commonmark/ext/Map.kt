@@ -1,6 +1,6 @@
 package org.commonmark.ext
 
-fun <K, V> MutableMap<K, V>.putIfAbsent(key: K, value: V): V? {
+internal fun <K, V> MutableMap<K, V>.putIfAbsent(key: K, value: V): V? {
     val v = get(key)
     if (v == null) {
         put(key, value)
@@ -8,4 +8,4 @@ fun <K, V> MutableMap<K, V>.putIfAbsent(key: K, value: V): V? {
     return v
 }
 
-expect fun <K, V> MutableMap<K, V>.computeIfAbsent2(key: K, mappingFunction: (K) -> V): V
+internal expect fun <K, V> MutableMap<K, V>.computeIfAbsent2(key: K, mappingFunction: (K) -> V): V

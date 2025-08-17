@@ -60,17 +60,17 @@ Then, add the dependency in your `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("io.github.darriousliu:commonmark:0.25.1")
+    implementation("io.github.darriousliu:commonmark:0.26.0")
     // Extensions (optional)
-    implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.1")
-    implementation("io.github.darriousliu:commonmark-ext-footnotes:0.25.1")
-    implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.1")
-    implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.1")
-    implementation("io.github.darriousliu:commonmark-ext-heading-anchor:0.25.1")
-    implementation("io.github.darriousliu:commonmark-ext-image-attributes:0.25.1")
-    implementation("io.github.darriousliu:commonmark-ext-ins:0.25.1")
-    implementation("io.github.darriousliu:commonmark-ext-task-list-items:0.25.1")
-    implementation("io.github.darriousliu:commonmark-ext-latex:0.25.1")
+    implementation("io.github.darriousliu:commonmark-ext-autolink:0.26.0")
+    implementation("io.github.darriousliu:commonmark-ext-footnotes:0.26.0")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.26.0")
+    implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.26.0")
+    implementation("io.github.darriousliu:commonmark-ext-heading-anchor:0.26.0")
+    implementation("io.github.darriousliu:commonmark-ext-image-attributes:0.26.0")
+    implementation("io.github.darriousliu:commonmark-ext-ins:0.26.0")
+    implementation("io.github.darriousliu:commonmark-ext-task-list-items:0.26.0")
+    implementation("io.github.darriousliu:commonmark-ext-latex:0.26.0")
 }
 ```
 
@@ -80,17 +80,17 @@ dependencies {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.darriousliu:commonmark:0.25.1")
+            implementation("io.github.darriousliu:commonmark:0.26.0")
             // Extensions (optional)
-            implementation("io.github.darriousliu:commonmark-ext-autolink:0.25.1")
-            implementation("io.github.darriousliu:commonmark-ext-footnotes:0.25.1")
-            implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.25.1")
-            implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.25.1")
-            implementation("io.github.darriousliu:commonmark-ext-heading-anchor:0.25.1")
-            implementation("io.github.darriousliu:commonmark-ext-image-attributes:0.25.1")
-            implementation("io.github.darriousliu:commonmark-ext-ins:0.25.1")
-            implementation("io.github.darriousliu:commonmark-ext-task-list-items:0.25.1")
-            implementation("io.github.darriousliu:commonmark-ext-latex:0.25.1")
+            implementation("io.github.darriousliu:commonmark-ext-autolink:0.26.0")
+            implementation("io.github.darriousliu:commonmark-ext-footnotes:0.26.0")
+            implementation("io.github.darriousliu:commonmark-ext-gfm-strikethrough:0.26.0")
+            implementation("io.github.darriousliu:commonmark-ext-gfm-tables:0.26.0")
+            implementation("io.github.darriousliu:commonmark-ext-heading-anchor:0.26.0")
+            implementation("io.github.darriousliu:commonmark-ext-image-attributes:0.26.0")
+            implementation("io.github.darriousliu:commonmark-ext-ins:0.26.0")
+            implementation("io.github.darriousliu:commonmark-ext-task-list-items:0.26.0")
+            implementation("io.github.darriousliu:commonmark-ext-latex:0.26.0")
         }
     }
 }

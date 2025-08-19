@@ -50,7 +50,7 @@ publishing {
 mavenPublishing {
     publishToMavenCentral()
 
-//    signAllPublications()
+    signAllPublications()
 
     pom(commonPom)
 }

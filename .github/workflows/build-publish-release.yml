@@ -42,9 +42,6 @@ jobs:
       - name: Validate Gradle Wrapper
         run: ./gradlew --version
 
-      - name: Build all targets
-        run: ./gradlew assembleRelease
-
       - name: Publish to GitHub Packages And Maven Central
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

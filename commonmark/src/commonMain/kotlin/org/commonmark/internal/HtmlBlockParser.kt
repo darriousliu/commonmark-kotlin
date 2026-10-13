@@ -106,7 +106,11 @@ class HtmlBlockParser private constructor(private val closingPattern: Regex?) :
             ),
             arrayOf(
                 Regex("^<!\\[CDATA\\["),
-                Regex("]]>")
+                // The leading ']' must be escaped: Kotlin/JS and Kotlin/Wasm compile a
+                // Regex with the JS RegExp unicode flag, where a bare ']' outside a
+                // character class is a SyntaxError ("lone quantifier brackets") — the
+                // companion object then fails to initialize and every HTML parse throws
+                Regex("\\]\\]>")
             ),
             arrayOf(
                 Regex(
